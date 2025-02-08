@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import Products from './Pages/Products'
 import Checkout from './Pages/Checkout'
 import { ToastContainer } from 'react-toastify'
+import ConfirmOrder from './Pages/ConfirmOrder'
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/products' element={<Products/>}/>
-          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/details' element={<Checkout/>}/>
+          <Route path='/checkout' element={<ConfirmOrder/>}/>
         </Routes>
     </div>
   )

@@ -1,0 +1,157 @@
+.checkout-container {
+    background: #0d0f17;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  h1 {
+    font-size: 22px;
+  }
+  
+  .session-expiry {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .payment-methods,
+  .payment-details {
+    margin-top: 20px;
+  }
+  
+  .checkbox-label, .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  
+  .coin-balance {
+    color: red;
+  }
+  
+  .card-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-secondary {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input {
+    background: #1a1d29;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+  }
+  
+  .order-summary {
+    margin-top: 20px;
+    background: #1a1d29;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .product img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-name {
+    font-weight: bold;
+  }
+  
+  .product-size {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .coupon-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .apply-btn {
+    background: orange;
+    border: none;
+    padding: 8px 12px;
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .pricing {
+    margin-top: 10px;
+  }
+  
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  .free {
+    color: green;
+  }
+  
+  .discount {
+    color: red;
+  }
+  
+  .total-amount {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .checkout-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .previous-btn {
+    background: gray;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .pay-btn {
+    background: orange;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .designer-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: gray;
+  }
+  

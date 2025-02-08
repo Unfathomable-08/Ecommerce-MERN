@@ -1,6 +1,6 @@
 import '../Styles/Products.css'
-import { useState } from 'react';
 import Card from './Card';
+import { Link } from 'react-router-dom';
 
 const Products = ({ products }) => {
   const visibleProducts = products?.slice(0, 8);
@@ -19,7 +19,9 @@ const Products = ({ products }) => {
             style={{marginTop: '50px', padding: '12px 30px'}}
             className="add-to-cart"
           >
-            See More
+            <Link to="/products">
+              See More
+            </Link>
           </button>
         </div>
       </div>    

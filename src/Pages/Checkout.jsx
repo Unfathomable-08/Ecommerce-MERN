@@ -61,7 +61,7 @@ const Checkout = () => {
                     <div className="product-info">
                         <h3>{product.title}</h3>
                         <p>{product.description}</p>
-                        <b>Price: ${product.price}</b>
+                        <b>Price: PKR {product.price}</b>
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@ const Checkout = () => {
                     {discount > 0 && <p className="discount-text">Discount: -{discount}%</p>}
 
                     <div className="total">
-                        <h3>Total: ${getTotalAmount().toFixed(2)}</h3>
+                        <h3>Total: PKR {getTotalAmount().toFixed(2)}</h3>
                     </div>
 
                     <button className="checkout-btn" onClick={handleOrderNow}>Order Now</button>
