@@ -60,7 +60,7 @@ const ConfirmOrder = () => {
 
                         <div className="payment-details">
                             <label className="radio-label">
-                                <input type="checkbox" checked />
+                                {/* <input type="checkbox" checked /> */}
                                 <span>Credit or Debit Card</span>
                             </label>
                             <div className="card-inputs">
@@ -98,14 +98,14 @@ const ConfirmOrder = () => {
                                 <span>Delivery Charges</span> <span className="free">{state?.fee || 'Free'}</span>
                             </div>
                             <div className="price-item">
-                                <span>Discount</span> <span className="discount">PKR -{discount}</span>
+                                <span>Discount</span> <span className="discount">PKR -{(state.price * discount * qty)/100}</span>
                             </div>
                             <div className="total-amount">
                                 <span>Total Amount</span> <span>PKR {getTotalAmount().toFixed(2)}</span>
                             </div>
+                        <button className="pay-now" onClick={handleOrderNow}>Pay Now</button>
                         </div>
 
-                        <button className="pay-now" onClick={handleOrderNow}>Pay Now</button>
                     </div>
 
                     <div className="checkout-actions">

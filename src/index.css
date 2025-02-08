@@ -1,5 +1,6 @@
 :root {
-    --primary: #111827
+    --primary: #111827;
+    --secondary: #4ca1af;
 }
 
 * {
@@ -11,7 +12,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {

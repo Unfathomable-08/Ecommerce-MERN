@@ -59,6 +59,15 @@ const Checkout = () => {
                         </div>
                     </div>
 
+                    <div>
+                        <h4>Available Coupons: </h4>
+                        <ul style={{marginLeft: '35px', marginTop: '10px'}}>
+                            <li>
+                                <span>DISCOUNT10</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div className="total">
                         <h3>Total: PKR {getTotalAmount().toFixed(2)}</h3>
                     </div>

@@ -5,6 +5,7 @@ import Products from './Pages/Products'
 import Checkout from './Pages/Checkout'
 import { ToastContainer } from 'react-toastify'
 import ConfirmOrder from './Pages/ConfirmOrder'
+import Login from './Pages/Login'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path='/products' element={<Products/>}/>
           <Route path='/details' element={<Checkout/>}/>
           <Route path='/checkout' element={<ConfirmOrder/>}/>
+          <Route path='/login' element={<Login/>}/>
         </Routes>
     </div>
   )
