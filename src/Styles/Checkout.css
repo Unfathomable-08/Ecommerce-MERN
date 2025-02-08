@@ -104,3 +104,12 @@
 .checkout-btn:hover {
     background-color: var(--primary);
 }
+
+.rating-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 22px;
+    color: #f1c32c;
+    padding: 10px 0 40px 0;
+}

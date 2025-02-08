@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/Checkout.css';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
+import { toast } from 'react-toastify';
 
 const Checkout = () => {
     const location = useLocation();
@@ -37,6 +38,16 @@ const Checkout = () => {
         return total - (total * discount) / 100;
     };
 
+    const handleOrderNow = () => {
+        toast.success('Order placed successfully!', {
+            autoClose: 3000,
+            hideProgressBar: false,
+            pauseOnHover: true,
+            progress: undefined,
+        });
+    };
+    
+
     return (
         <>
             <Navbar/>
@@ -63,12 +74,13 @@ const Checkout = () => {
                     </div>
 
                     <div className="rating">
-                        <h4 style={{paddingBottom: '5px'}}>Rating: </h4>
+                        <h4 style={{paddingBottom: '5px'}}>Average Rating: </h4>
                         <div className="rating-icons">
-                            <i className="fa-regular fa-star"></i>
-                            <i className="fa-regular fa-star"></i>
-                            <i className="fa-regular fa-star"></i>
-                            <i className="fa-regular fa-star"></i>
+                            {Math.round(product.rating.rate) > 0 ? <i className="fa-solid fa-star"></i> : <i className="fa-regular fa-star"></i> }
+                            {Math.round(product.rating.rate) > 1 ? <i className="fa-solid fa-star"></i> : <i className="fa-regular fa-star"></i> }
+                            {Math.round(product.rating.rate) > 2 ? <i className="fa-solid fa-star"></i> : <i className="fa-regular fa-star"></i> }
+                            {Math.round(product.rating.rate) > 3 ? <i className="fa-solid fa-star"></i> : <i className="fa-regular fa-star"></i> }
+                            {Math.round(product.rating.rate) > 4 ? <i className="fa-solid fa-star"></i> : <i className="fa-regular fa-star"></i> }
                         </div>
                     </div>
 
@@ -89,7 +101,7 @@ const Checkout = () => {
                         <h3>Total: ${getTotalAmount().toFixed(2)}</h3>
                     </div>
 
-                    <button className="checkout-btn">Proceed to Checkout</button>
+                    <button className="checkout-btn" onClick={handleOrderNow}>Order Now</button>
                 </div>
             </div>
         </>

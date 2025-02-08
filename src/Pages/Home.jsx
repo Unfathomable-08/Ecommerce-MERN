@@ -12,14 +12,13 @@ const Home = () => {
         const fetchProducts = async () => {
             try {
                 const res = await axios.get('https://fakestoreapi.com/products')
-                console.log(res)
                 setData(res.data)
             } catch (error) {
                 console.log(error)
             }
         }
         fetchProducts();
-    });
+    }, []);
 
   return (
     <div>
