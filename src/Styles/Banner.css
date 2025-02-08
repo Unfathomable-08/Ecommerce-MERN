@@ -1,0 +1,15 @@
+.banner {
+    position: relative;
+    color: white;
+    height: 450px;
+    text-align: center;
+    background-image: url('../Images/banner.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+.banner p {
+    margin-top: 10px;
+}
