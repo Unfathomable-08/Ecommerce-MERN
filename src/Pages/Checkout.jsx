@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import '../Styles/Checkout.css';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
-import { toast } from 'react-toastify';
 
 const Checkout = () => {
     const location = useLocation();
     const product = location.state; 
     const [quantity, setQuantity] = useState(1);
-    const [couponCode, setCouponCode] = useState('');
-    const [discount, setDiscount] = useState(0); // Percentage %
 
     const handleIncrease = () => {
         setQuantity((prev) => prev + 1);
@@ -21,32 +18,10 @@ const Checkout = () => {
         }
     };
 
-    const handleCouponChange = (e) => {
-        setCouponCode(e.target.value);
-    };
-
-    const applyCoupon = () => {
-        if (couponCode === 'DISCOUNT10') {
-            setDiscount(10);
-        } else {
-            setDiscount(0);
-        }
-    };
-
     const getTotalAmount = () => {
         const total = product.price * quantity;
-        return total - (total * discount) / 100;
-    };
-
-    const handleOrderNow = () => {
-        toast.success('Order placed successfully!', {
-            autoClose: 3000,
-            hideProgressBar: false,
-            pauseOnHover: true,
-            progress: undefined,
-        });
-    };
-    
+        return total - (total) / 100;
+    };    
 
     return (
         <>
@@ -84,24 +59,11 @@ const Checkout = () => {
                         </div>
                     </div>
 
-                    <h4 style={{paddingBottom: '10px'}}>Coupon Code: </h4>
-                    <div className="coupon">
-                        <input
-                            type="text"
-                            placeholder="Enter coupon code"
-                            value={couponCode}
-                            onChange={handleCouponChange}
-                            />
-                        <button onClick={applyCoupon}>Apply Coupon</button>
-                    </div>
-
-                    {discount > 0 && <p className="discount-text">Discount: -{discount}%</p>}
-
                     <div className="total">
                         <h3>Total: PKR {getTotalAmount().toFixed(2)}</h3>
                     </div>
 
-                    <button className="checkout-btn" onClick={handleOrderNow}>Order Now</button>
+                    <button className="checkout-btn"><Link to='/checkout' state={{product, qty: quantity}} style={{textDecoration: 'none', color: 'white'}}>Checkout Order</Link></button>
                 </div>
             </div>
         </>

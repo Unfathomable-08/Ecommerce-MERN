@@ -1,157 +1,139 @@
 .checkout-container {
-    background: #0d0f17;
-    padding: 20px;
+    background: var(--primary);
+    padding: 35px;
     border-radius: 12px;
     color: white;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-  
-  h1 {
-    font-size: 22px;
-  }
-  
-  .session-expiry {
+    min-height: 70vh;
+    gap: 25px;
+}
+
+.checkout-container h1,
+.checkout-container h3 {
+    margin: 10px 0;
+}
+
+.session-expiry {
     font-size: 12px;
     color: gray;
-  }
-  
-  .payment-methods,
-  .payment-details {
+}
+
+.payment-methods,
+.payment-details {
     margin-top: 20px;
-  }
-  
-  .checkbox-label, .radio-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-  }
-  
-  .coin-balance {
-    color: red;
-  }
-  
-  .card-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .card-secondary {
+}
+
+.card-secondary {
     display: flex;
     gap: 10px;
-  }
-  
-  input {
-    background: #1a1d29;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    color: white;
-  }
-  
-  .order-summary {
-    margin-top: 20px;
-    background: #1a1d29;
-    padding: 15px;
+}
+
+.order-summary {
+    padding: 20px;
     border-radius: 10px;
-  }
-  
-  .product {
+    border: 1px solid #aaa;
+    margin: 20px;
+    position: relative;
+}
+
+.product-dts {
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
-  
-  .product img {
-    width: 50px;
-    height: 50px;
-    border-radius: 6px;
-  }
-  
-  .product-info {
+    gap: 0px;
+}
+
+.product-dts img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+.product-info {
     display: flex;
     flex-direction: column;
-  }
-  
-  .product-name {
+}
+
+.product-name {
     font-weight: bold;
-  }
-  
-  .product-size {
-    font-size: 12px;
+}
+
+.product-size {
     color: gray;
-  }
-  
-  .coupon-section {
-    display: flex;
+}
+
+.coupon-section {
+    display: grid;
     gap: 10px;
+    grid-template-columns: 3fr 1fr;
     margin-top: 10px;
-  }
-  
-  .apply-btn {
-    background: orange;
-    border: none;
-    padding: 8px 12px;
+}
+
+.coupon-section input {
+    padding: 12px;
+    margin-right: 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.apply-btn {
+    width: 100%;
+    cursor: pointer;
+    background-color: white;
     color: black;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .pricing {
-    margin-top: 10px;
-  }
-  
-  .price-item {
+    border: none;
+    border-radius: 5px;
+}
+
+.pricing {
+    margin-top: 30px;
+}
+
+.price-item {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
-  }
-  
-  .free {
-    color: green;
-  }
-  
-  .discount {
-    color: red;
-  }
-  
-  .total-amount {
+    margin: 3px 0;
+}
+
+.total-amount {
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.previous-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
     font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .checkout-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .previous-btn {
-    background: gray;
-    padding: 10px 15px;
+}
+
+.cash-on, .payment-details {
+    background-color: #44446d;
+    padding: 15px 25px;
+    border-radius: 10px;
+    width: calc(100% - 40px);
+}
+
+.payment-details input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .pay-btn {
-    background: orange;
-    padding: 10px 15px;
+}
+
+.pay-now {
+    background-color: white;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .designer-info {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    color: gray;
-  }
-  
+    padding: 7px 20px;
+    border-radius: 8px;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
