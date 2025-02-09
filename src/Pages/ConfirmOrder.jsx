@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "../Styles/ConfirmOrder.css";
 import Navbar from "../Components/Navbar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
 
 const ConfirmOrder = () => {
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        const email = localStorage.getItem('email');
+        if (!email){
+        navigate('/login')
+        }
+    },[]);
+
     const location = useLocation();
     const state = location.state.product;
     const qty = location.state.qty;

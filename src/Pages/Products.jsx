@@ -2,9 +2,18 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../Components/Card";
 import Navbar from "../Components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 
 const Products = () => {
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    const email = localStorage.getItem('email');
+    if (!email){
+      navigate('/login')
+    }
+  },[]);
 
   const [data, setData] = useState([]);
 

@@ -118,3 +118,23 @@
     color: #f1c32c;
     padding: 10px 0 40px 0;
 }
+
+@media (max-width: 1100px) {
+    .checkout-page {
+        grid-template-columns: 5fr 3fr;
+    }
+}
+@media (max-width: 800px) {
+    .checkout-page {
+        grid-template-columns: 1fr;
+    }
+    .product-controls {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-btn {
+        /* width: 80%; */
+    }
+}

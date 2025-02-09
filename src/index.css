@@ -23,19 +23,19 @@ body {
 
 @media (max-width: 1200px) {
     .container {
-        padding: 0 80px;
+        padding: 0 100px;
     }
 }
 
 @media (max-width: 992px) {
     .container {
-        padding: 0 40px;
+        padding: 0 80px;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 20px;
+        padding: 0 40px;
     }
 }
 

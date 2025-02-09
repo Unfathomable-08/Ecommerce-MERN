@@ -23,3 +23,21 @@
     text-decoration: none;
     color: white;
 }
+
+@media (max-width: 980px) {
+    .products-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 720px) {
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+        margin: auto 20px;
+    }
+}
+@media (max-width: 500px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        margin: auto 20px;
+    }
+}

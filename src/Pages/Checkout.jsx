@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/Checkout.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 
 const Checkout = () => {
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        const email = localStorage.getItem('email');
+        if (!email){
+        navigate('/login')
+        }
+    },[]);
+
     const location = useLocation();
     const product = location.state; 
     const [quantity, setQuantity] = useState(1);
