@@ -18,7 +18,7 @@ const Signup = () => {
       if (formData !== "") {
         if (formData.password == formData.rePassword){
           try {
-            const res = await axios.post('http://127.0.0.1:5050/api/signup', formData);
+            const res = await axios.post('https://zyvelo.vercel.app/api/signup', formData);
             console.log(res)
             if (res.status === 201){
               localStorage.setItem("token", res.token);
