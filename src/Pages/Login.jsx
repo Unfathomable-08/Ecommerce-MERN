@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import '../Styles/Login.css'
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 const Login = () => {
 
@@ -17,8 +18,23 @@ const Login = () => {
   useEffect(()=>{
     if (formData !== ''){
         localStorage.setItem('email', formData.email)
-        navigate('/')
     }
+
+    const fetchData = async () => {
+      if (formData !== "") {
+        try {
+          const res = await axios.post('http://127.0.0.1:5050/api/login', formData);
+          if (res.status === 200){
+            localStorage.setItem("token", res.token);
+            return navigate('/');
+          }
+        } catch (error) {
+          alert('An error occured while sending data!')
+          console.error(error);
+        }
+      }
+    };
+    fetchData();
   },[formData])
 
   return (
@@ -28,6 +44,7 @@ const Login = () => {
           <h2>Login Form</h2>
           <div className="toggler">
             <div className="active"><Link className="active-link" to='/login'>Login</Link></div>
+            <div><Link className="link" to='/signup'>Signup</Link></div>
           </div>
 
             <input
@@ -48,8 +65,8 @@ const Login = () => {
               {...register('password', { 
                 required: 'Password is required', 
                 minLength: {
-                  value: 8, 
-                  message: 'Password must be at least 8 characters long'
+                  value: 4, 
+                  message: 'Password must be at least 4 characters long'
                 },
                 maxLength: {
                   value: 30, 

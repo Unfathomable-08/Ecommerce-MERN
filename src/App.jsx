@@ -6,6 +6,7 @@ import Checkout from './Pages/Checkout'
 import { ToastContainer } from 'react-toastify'
 import ConfirmOrder from './Pages/ConfirmOrder'
 import Login from './Pages/Login'
+import Signup from './Pages/Signup'
 import NotFound from './Pages/Notfound'
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/details' element={<Checkout/>}/>
           <Route path='/checkout' element={<ConfirmOrder/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<Signup/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
     </div>
