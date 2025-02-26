@@ -3,7 +3,6 @@ import Banner from '../Components/Banner'
 import Products from '../Components/Products'
 import axios from 'axios'
 import Navbar from '../Components/Navbar'
-import Checkout from './Checkout'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../Components/Footer'
 
@@ -11,10 +10,25 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    const email = localStorage.getItem('email');
-    if (!email){
-      navigate('/login')
+    const token = localStorage.getItem('token');
+    const fetchFn = async () => {
+      try {
+        const res = await axios.get('https://zyvelo.vercel.app/api/auth', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        if (res.status == 200){
+          navigate('/');
+        }
+        else if (res.status == 401){
+          navigate('/login')
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
+    fetchFn
   },[]);
 
     const [data, setData] = useState([]);

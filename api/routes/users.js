@@ -84,6 +84,12 @@ router.post('/login', async (req, res)=>{
     } catch (error) {
         res.status(500).json({message: error.message})
     }
+});
+
+// To verify token
+
+router.get('/auth', (req, res)=>{
+    console.log(req.headers.authorization)
 })
 
 module.exports = router;

@@ -21,7 +21,7 @@ const Signup = () => {
             const res = await axios.post('https://zyvelo.vercel.app/api/signup', formData);
             console.log(res)
             if (res.status === 201){
-              localStorage.setItem("token", res.token);
+              localStorage.setItem("token", res.data.token);
               return navigate('/login');
             }
           } catch (error) {

@@ -25,7 +25,7 @@ const Login = () => {
         try {
           const res = await axios.post('https://zyvelo.vercel.app/api/login', formData);
           if (res.status === 200){
-            localStorage.setItem("token", res.token);
+            localStorage.setItem("token", res.data.token);
             return navigate('/');
           }
         } catch (error) {
