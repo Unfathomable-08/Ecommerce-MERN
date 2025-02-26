@@ -88,8 +88,27 @@ router.post('/login', async (req, res)=>{
 
 // To verify token
 
-router.get('/auth', (req, res)=>{
-    console.log(req.headers.authorization)
-})
+router.get('/auth', (req, res) => {
+    const authHeader = req.headers.authorization;
+
+    // Check if the authorization header is present and formatted correctly
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'No token, authorization denied' });
+    }
+
+    const token = authHeader.split(' ')[1]; // Extract the token
+
+    try {
+        // Verify the token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        res.json({ 
+            message: 'Authenticated successfully', 
+            user: decoded 
+        });
+    } catch (error) {
+        res.status(401).json({ message: 'Invalid or expired token' });
+    }
+});
 
 module.exports = router;

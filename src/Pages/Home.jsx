@@ -11,24 +11,28 @@ const Home = () => {
 
   useEffect(()=>{
     const token = localStorage.getItem('token');
+    if (!token) {
+      navigate("/login"); // Redirect if no token
+      return;
+    }
+
     const fetchFn = async () => {
       try {
-        const res = await axios.get('https://zyvelo.vercel.app/api/auth', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
+        await axios.get("https://zyvelo.vercel.app/api/auth", {
+          headers: { Authorization: `Bearer ${token}` },
         });
-        if (res.status == 200){
-          navigate('/');
-        }
-        else if (res.status == 401){
-          navigate('/login')
-        }
+
+        navigate("/"); // If successful, navigate to home
       } catch (error) {
-        console.log(error);
+        if (error.response?.status === 401) {
+          navigate("/login"); // Unauthorized, navigate to login
+        } else {
+          console.error("Error fetching data:", error);
+        }
       }
-    }
-    fetchFn
+    };
+
+    fetchFn();
   },[]);
 
     const [data, setData] = useState([]);
